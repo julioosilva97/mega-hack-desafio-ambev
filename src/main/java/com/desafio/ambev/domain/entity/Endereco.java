@@ -73,6 +73,4 @@ public class Endereco extends AbstractEntity<Long> {
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
-	
-	
 }

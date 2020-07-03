@@ -19,9 +19,14 @@ public class Pessoa extends AbstractEntity<Long> {
 	private String celular;
 	
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "endereco_id_fk")
+	@JoinColumn(name = "id_endereco")
 	private Endereco endereco;
 	private LocalDate dataNascimento;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_usuario")
+	private Usuario usuario;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -47,11 +52,11 @@ public class Pessoa extends AbstractEntity<Long> {
 		this.dataNascimento = dataNascimento;
 	}
 	
-	public Pessoa(String nome, String celular, Endereco endereco, LocalDate dataNascimento) {
-		this.nome = nome;
-		this.celular = celular;
-		this.endereco = endereco;
-		this.dataNascimento = dataNascimento;
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	public Pessoa() {
 	}
