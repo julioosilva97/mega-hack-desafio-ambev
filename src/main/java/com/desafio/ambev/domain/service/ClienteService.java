@@ -11,4 +11,6 @@ public interface ClienteService {
 	Cliente buscarPorId(Long id);
 	List<Cliente> listarTodos();
 	void excluirPorId(Long id);
+	
+	
 }
