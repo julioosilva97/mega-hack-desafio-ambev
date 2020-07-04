@@ -3,18 +3,22 @@ package com.desafio.ambev.domain.entity;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.desafio.ambev.domain.util.AbstractEntity;
 
 @SuppressWarnings("serial")
 @Entity
 @Table(name = "EVENTO")
-public class Evento {
+public class Evento extends AbstractEntity<Long> {
 
 	private String nome;
 	private LocalDateTime dataHoraInicio;
 	private LocalDateTime dataHoraFim;
 	@ManyToOne
+	@JoinColumn(name="estabelecimento_id")
 	private Estabelecimento estabelecimento;
 	public String getNome() {
 		return nome;

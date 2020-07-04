@@ -26,14 +26,14 @@ public class Estabelecimento extends AbstractEntity<Long> {
 	private int qtdBanheiros;
 	
 	@OneToOne
-	@JoinColumn(name="id_dono")
-	private Pessoa dono;
+	@JoinColumn(name="id_proprietario")
+	private Proprietario proprietario;
 	
 	@OneToOne
 	@JoinColumn(name="id_cardapio")
 	private Cardapio cardapio;
 	
-	@OneToMany(mappedBy ="evento")
+	@OneToMany(mappedBy ="estabelecimento")
 	private List <Evento> eventos;
 
 	public String getNome() {
@@ -60,12 +60,22 @@ public class Estabelecimento extends AbstractEntity<Long> {
 		this.qtdBanheiros = qtdBanheiros;
 	}
 
-	public Pessoa getDono() {
-		return dono;
+	
+
+	public Proprietario getProprietario() {
+		return proprietario;
 	}
 
-	public void setDono(Pessoa dono) {
-		this.dono = dono;
+	public void setProprietario(Proprietario proprietario) {
+		this.proprietario = proprietario;
+	}
+
+	public List<Evento> getEventos() {
+		return eventos;
+	}
+
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
 	}
 
 	public Cardapio getCardapio() {
@@ -76,11 +86,11 @@ public class Estabelecimento extends AbstractEntity<Long> {
 		this.cardapio = cardapio;
 	}
 
-	public Estabelecimento(String nome, Endereco endereco, int qtdBanheiros, Pessoa dono, Cardapio cardapio) {
+	public Estabelecimento(String nome, Endereco endereco, int qtdBanheiros, Proprietario proprietario, Cardapio cardapio) {
 		this.nome = nome;
 		this.endereco = endereco;
 		this.qtdBanheiros = qtdBanheiros;
-		this.dono = dono;
+		this.proprietario = proprietario;
 		this.cardapio = cardapio;
 	}
 
