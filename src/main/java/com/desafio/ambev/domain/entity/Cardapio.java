@@ -4,7 +4,9 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import org.modelmapper.ModelMapper;
@@ -17,7 +19,12 @@ import com.desafio.ambev.domain.util.AbstractEntity;
 @Table(name = "CARDAPIO")
 public class Cardapio extends AbstractEntity<Long> {
 
-	@OneToMany(cascade = CascadeType.PERSIST,mappedBy ="cardapio")
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_estabelecimento")
+	private Estabelecimento estabelecimento; 
+	
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="id_cardapio")
 	private List<Produto> produtos;
 
 	public List<Produto> getProdutos() {
@@ -31,6 +38,16 @@ public class Cardapio extends AbstractEntity<Long> {
 	public Cardapio(List<Produto> produtos) {
 		this.produtos = produtos;
 	}
+	
+
+	public Estabelecimento getEstebelecimento() {
+		return estabelecimento;
+	}
+
+	public void setEstebelecimento(Estabelecimento estabelecimento) {
+		this.estabelecimento = estabelecimento;
+	}
+
 	
 	public CardapioDTO toDTO() {
 		

@@ -30,8 +30,7 @@ public class Estabelecimento extends AbstractEntity<Long> {
 	@JoinColumn(name="id_proprietario")
 	private Proprietario proprietario;
 	
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="id_cardapio")
+	@OneToOne(mappedBy = "estabelecimento")
 	private Cardapio cardapio;
 	
 	@OneToMany(mappedBy ="estabelecimento",cascade = CascadeType.ALL)
