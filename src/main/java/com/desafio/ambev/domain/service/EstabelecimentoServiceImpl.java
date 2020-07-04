@@ -14,6 +14,8 @@ public class EstabelecimentoServiceImpl implements EstabelecimentoService {
 
 	@Autowired 
 	EstabelecimentoDAO estabelecimentoDAO;
+	
+
 
 	@Override
 	public void salvar(Estabelecimento estabelecimento) {

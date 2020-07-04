@@ -2,11 +2,15 @@ package com.desafio.ambev.domain.service;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.desafio.ambev.domain.entity.Evento;
 import com.desafio.ambev.domain.repository.EventoDAO;
 
+@Service @Transactional
 public class EventoServiceImpl implements EventoService{
 	
 	@Autowired

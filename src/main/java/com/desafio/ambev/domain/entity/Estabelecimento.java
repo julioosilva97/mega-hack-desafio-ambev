@@ -20,7 +20,7 @@ import com.desafio.ambev.domain.util.AbstractEntity;
 public class Estabelecimento extends AbstractEntity<Long> {
 
 	private String nome;
-	@OneToOne
+	@OneToOne(cascade= CascadeType.ALL)
 	@JoinColumn(name="id_endereco")
 	private Endereco endereco;
 	
