@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.TableGenerator;
 
@@ -25,7 +26,7 @@ public class Produto extends AbstractEntity<Long>  {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="id_cardapio")
+	@JoinColumn(name="id_cardapio",insertable = false, updatable = false)
 	private Cardapio cardapio;
 	
 	public String getNome() {
