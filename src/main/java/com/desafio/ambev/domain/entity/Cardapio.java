@@ -2,7 +2,6 @@ package com.desafio.ambev.domain.entity;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -10,6 +9,7 @@ import javax.persistence.Table;
 import org.modelmapper.ModelMapper;
 
 import com.desafio.ambev.api.dto.CardapioDTO;
+import com.desafio.ambev.api.dto.ClienteDTO;
 import com.desafio.ambev.domain.util.AbstractEntity;
 
 @SuppressWarnings("serial")
@@ -17,7 +17,7 @@ import com.desafio.ambev.domain.util.AbstractEntity;
 @Table(name = "CARDAPIO")
 public class Cardapio extends AbstractEntity<Long> {
 
-	@OneToMany(cascade = CascadeType.PERSIST,mappedBy ="cardapio")
+	@OneToMany(mappedBy ="cardapio")
 	private List<Produto> produtos;
 
 	public List<Produto> getProdutos() {

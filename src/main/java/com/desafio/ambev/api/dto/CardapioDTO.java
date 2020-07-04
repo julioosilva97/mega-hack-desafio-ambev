@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Cascade;
+
 public class CardapioDTO {
 
 	private Long id;

@@ -23,12 +23,8 @@ public class Produto extends AbstractEntity<Long>  {
 	private BigDecimal valor;
 	private TipoProduto tipo;
 	
-<<<<<<< HEAD
-	@ManyToOne(cascade= CascadeType.ALL)
-=======
 	
 	@ManyToOne
->>>>>>> 906b42604c73a889d47e408a8f37c3d133939fb8
 	@JoinColumn(name="id_cardapio")
 	private Cardapio cardapio;
 	
