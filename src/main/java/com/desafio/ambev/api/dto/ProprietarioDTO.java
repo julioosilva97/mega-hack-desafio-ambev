@@ -1,10 +1,10 @@
 package com.desafio.ambev.api.dto;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
+import com.sun.istack.NotNull;
 
-public class ClienteDTO {
+public class ProprietarioDTO {
 	
 	private Long id;
 	

@@ -5,7 +5,6 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,56 +18,56 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.desafio.ambev.api.dto.ClienteDTO;
-import com.desafio.ambev.domain.entity.Cliente;
-import com.desafio.ambev.domain.service.ClienteService;
+import com.desafio.ambev.api.dto.ProprietarioDTO;
+import com.desafio.ambev.domain.entity.Proprietario;
+import com.desafio.ambev.domain.service.ProprietarioService;
 
 @RestController
-@RequestMapping("clientes")
-public class ClienteController {
+@RequestMapping("proprietarios")
+public class ProprietarioController {
 
 	@Autowired
-	ClienteService service;
+	ProprietarioService service;
 	
 	
 	@PostMapping("salvar")
-	public ResponseEntity<Void> salvar(@Valid @RequestBody ClienteDTO clienteDTO) {
+	public ResponseEntity<Void> salvar(@Valid @RequestBody ProprietarioDTO proprietarioDTO) {
 		
-		Cliente cliente = new Cliente();
+		Proprietario proprietario = new Proprietario();
 		
-		cliente = cliente.toDoMain(clienteDTO);
+		proprietario = proprietario.toDoMain(proprietarioDTO);
 		
-		service.salvar(cliente);
+		service.salvar(proprietario);
 		
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 	
 	@PatchMapping("buscar/{id}")
-	public ResponseEntity<ClienteDTO> buscar(@PathVariable("id") Long id){
+	public ResponseEntity<ProprietarioDTO> buscar(@PathVariable("id") Long id){
 		
-		return new ResponseEntity<ClienteDTO>(service.buscarPorId(id).toDTO(), HttpStatus.OK);
+		return new ResponseEntity<ProprietarioDTO>(service.buscarPorId(id).toDTO(), HttpStatus.OK);
 		
 	}
 	
 	@GetMapping("listar")
-	public ResponseEntity<List<ClienteDTO>> listarTodos(){
+	public ResponseEntity<List<ProprietarioDTO>> listarTodos(){
 		
-		List<Cliente> clientes = service.listarTodos();
+		List<Proprietario> proprietarios = service.listarTodos();
 		
-		return new ResponseEntity<List<ClienteDTO>>(clientes.stream()
-				.map(cliente -> cliente.toDTO())
+		return new ResponseEntity<List<ProprietarioDTO>>(proprietarios.stream()
+				.map(proprietario -> proprietario.toDTO())
 				.collect(Collectors.toList()), HttpStatus.OK);
 		
 	}
 	
 	@PutMapping("atualizar")
-    public ResponseEntity<Void> atualizar(@Valid @RequestBody ClienteDTO clienteDTO) {
+    public ResponseEntity<Void> atualizar(@Valid @RequestBody ProprietarioDTO proprietarioDTO) {
 		
-		Cliente cliente = new Cliente();
+		Proprietario proprietario = new Proprietario();
 		
-		cliente = cliente.toDoMain(clienteDTO);
+		proprietario = proprietario.toDoMain(proprietarioDTO);
 		
-		service.atualizar(cliente);
+		service.atualizar(proprietario);
 		
 		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
@@ -81,6 +80,5 @@ public class ClienteController {
 		return new ResponseEntity<Void>(HttpStatus.OK);
 		
 	}
-	
 	
 }

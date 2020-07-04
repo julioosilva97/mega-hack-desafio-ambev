@@ -19,11 +19,15 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+<<<<<<< HEAD
 
 	<dependencies>
 
 
 
+=======
+	<dependencies>
+>>>>>>> defca50d2692b2dd6742e48d25913c5f485b42f6
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -32,8 +36,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+<<<<<<< HEAD
 		<!-- <dependency> <groupId>org.flywaydb</groupId> <artifactId>flyway-core</artifactId> 
 			</dependency> -->
+=======
+		<!-- <dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency> -->
+>>>>>>> defca50d2692b2dd6742e48d25913c5f485b42f6
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -57,6 +68,7 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+<<<<<<< HEAD
 
 		<dependency>
 			<groupId>javax.validation</groupId>
@@ -69,6 +81,11 @@
 		</dependency>
 
 	</dependencies>
+=======
+	</dependencies>
+
+
+>>>>>>> defca50d2692b2dd6742e48d25913c5f485b42f6
 
 	<build>
 		<plugins>
