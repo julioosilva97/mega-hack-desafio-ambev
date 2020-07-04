@@ -28,5 +28,9 @@ public class Cliente extends Pessoa {
 		return mapper.map(clienteDTO, this.getClass());
 	}
 	
-	
+	public ClienteDTO toDTO() {
+		
+		ModelMapper mapper = new ModelMapper();
+		return mapper.map(this, ClienteDTO.class);
+	}
 }
