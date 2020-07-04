@@ -7,6 +7,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import org.modelmapper.ModelMapper;
+
+import com.desafio.ambev.api.dto.EventoDTO;
 import com.desafio.ambev.domain.util.AbstractEntity;
 
 @SuppressWarnings("serial")
@@ -52,6 +55,16 @@ public class Evento extends AbstractEntity<Long> {
 		this.estabelecimento = estabelecimento;
 	}
 	public Evento() {
+	}
+	
+	public EventoDTO toDTO() {
+		ModelMapper mapper = new ModelMapper();
+		return mapper.map(this, EventoDTO.class);
+	}
+	
+	public Evento toDoMain(EventoDTO eventoDTO) {
+		ModelMapper mapper = new  ModelMapper();
+		return mapper.map(eventoDTO, this.getClass());
 	}
 	
 }

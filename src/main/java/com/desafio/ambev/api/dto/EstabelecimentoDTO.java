@@ -27,4 +27,48 @@ public class EstabelecimentoDTO {
 	
 	private Cardapio cardapio;
 	private List<Evento> eventos;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	public String getQtdBanheiros() {
+		return qtdBanheiros;
+	}
+	public void setQtdBanheiros(String qtdBanheiros) {
+		this.qtdBanheiros = qtdBanheiros;
+	}
+	public Proprietario getProprietario() {
+		return proprietario;
+	}
+	public void setProprietario(Proprietario proprietario) {
+		this.proprietario = proprietario;
+	}
+	public Cardapio getCardapio() {
+		return cardapio;
+	}
+	public void setCardapio(Cardapio cardapio) {
+		this.cardapio = cardapio;
+	}
+	public List<Evento> getEventos() {
+		return eventos;
+	}
+	public void setEventos(List<Evento> eventos) {
+		this.eventos = eventos;
+	}
+	
+	
 }

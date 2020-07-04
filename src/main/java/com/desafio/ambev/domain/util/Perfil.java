@@ -3,7 +3,7 @@ package com.desafio.ambev.domain.util;
 public enum Perfil {
 	
 	CLIENTE("CLIENTE"),
-	DONO("DONE"),
+	DONO("DONO"),
 	ADMINISTRATOR("ADMINISTRATOR");
 	
 	private String descricao;
