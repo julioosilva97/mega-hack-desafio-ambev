@@ -2,6 +2,7 @@ package com.desafio.ambev.domain.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -29,11 +30,11 @@ public class Estabelecimento extends AbstractEntity<Long> {
 	@JoinColumn(name="id_proprietario")
 	private Proprietario proprietario;
 	
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="id_cardapio")
 	private Cardapio cardapio;
 	
-	@OneToMany(mappedBy ="estabelecimento")
+	@OneToMany(mappedBy ="estabelecimento",cascade = CascadeType.ALL)
 	private List <Evento> eventos;
 
 	public String getNome() {

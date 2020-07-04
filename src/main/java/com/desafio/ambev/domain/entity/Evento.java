@@ -18,7 +18,7 @@ public class Evento extends AbstractEntity<Long> {
 	private LocalDateTime dataHoraInicio;
 	private LocalDateTime dataHoraFim;
 	@ManyToOne
-	@JoinColumn(name="estabelecimento_id")
+	@JoinColumn(name="id_estabelecimento")
 	private Estabelecimento estabelecimento;
 	public String getNome() {
 		return nome;
@@ -53,7 +53,5 @@ public class Evento extends AbstractEntity<Long> {
 	}
 	public Evento() {
 	}
-	
-	
 	
 }
