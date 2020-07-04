@@ -4,9 +4,12 @@ import java.math.BigDecimal;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 import com.desafio.ambev.domain.util.AbstractEntity;
 import com.desafio.ambev.domain.util.TipoProduto;
@@ -20,7 +23,12 @@ public class Produto extends AbstractEntity<Long>  {
 	private BigDecimal valor;
 	private TipoProduto tipo;
 	
+<<<<<<< HEAD
 	@ManyToOne(cascade= CascadeType.ALL)
+=======
+	
+	@ManyToOne
+>>>>>>> 906b42604c73a889d47e408a8f37c3d133939fb8
 	@JoinColumn(name="id_cardapio")
 	private Cardapio cardapio;
 	
@@ -47,4 +55,7 @@ public class Produto extends AbstractEntity<Long>  {
 	public void setTipo(TipoProduto tipo) {
 		this.tipo = tipo;
 	}
+	public Produto() {
+	}
+	
 }
