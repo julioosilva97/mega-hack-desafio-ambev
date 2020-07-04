@@ -3,9 +3,12 @@ package com.desafio.ambev.domain.entity;
 import java.math.BigDecimal;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.TableGenerator;
 
 import com.desafio.ambev.domain.util.AbstractEntity;
 import com.desafio.ambev.domain.util.TipoProduto;
@@ -18,6 +21,7 @@ public class Produto extends AbstractEntity<Long>  {
 	private String nome;
 	private BigDecimal valor;
 	private TipoProduto tipo;
+	
 	
 	@ManyToOne
 	@JoinColumn(name="id_cardapio")
@@ -46,4 +50,7 @@ public class Produto extends AbstractEntity<Long>  {
 	public void setTipo(TipoProduto tipo) {
 		this.tipo = tipo;
 	}
+	public Produto() {
+	}
+	
 }

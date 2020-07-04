@@ -3,8 +3,10 @@ package com.desafio.ambev.api.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,7 +22,7 @@ public class CardapioController {
 	CardapioService service;
 	
 	@PostMapping("salvar")
-	public ResponseEntity<Void> salvar(@Valid CardapioDTO cardapioDTO){
+	public ResponseEntity<Void> salvar(@Valid  @RequestBody CardapioDTO cardapioDTO){
 		
 		Cardapio cardapio = new Cardapio();
 		
@@ -28,7 +30,9 @@ public class CardapioController {
 		
 		service.salvar(cardapio);
 		
-		return null;
+		return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
+	
+	
 	
 }

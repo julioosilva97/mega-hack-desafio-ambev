@@ -6,7 +6,6 @@ public class ProdutoDTO {
 	
 	private Long id;
 	
-	
 	private String nome;
 
 	public Long getId() {
@@ -24,5 +23,15 @@ public class ProdutoDTO {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public ProdutoDTO(Long id, String nome) {
+		this.id = id;
+		this.nome = nome;
+	}
+
+	public ProdutoDTO() {
+	}
+	
+	
 
 }
