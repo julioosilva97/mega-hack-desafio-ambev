@@ -18,15 +18,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.desafio.ambev.api.dto.ClienteDTO;
 import com.desafio.ambev.api.dto.ProprietarioDTO;
-import com.desafio.ambev.domain.entity.Cliente;
 import com.desafio.ambev.domain.entity.Proprietario;
-import com.desafio.ambev.domain.service.ClienteService;
 import com.desafio.ambev.domain.service.ProprietarioService;
 
 @RestController
-@RequestMapping("proprietario")
+@RequestMapping("proprietarios")
 public class ProprietarioController {
 
 	@Autowired
@@ -83,6 +80,5 @@ public class ProprietarioController {
 		return new ResponseEntity<Void>(HttpStatus.OK);
 		
 	}
-	
 	
 }

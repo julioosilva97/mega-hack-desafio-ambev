@@ -7,7 +7,6 @@ import javax.persistence.Table;
 
 import org.modelmapper.ModelMapper;
 
-import com.desafio.ambev.api.dto.ClienteDTO;
 import com.desafio.ambev.api.dto.ProprietarioDTO;
 
 @SuppressWarnings("serial")

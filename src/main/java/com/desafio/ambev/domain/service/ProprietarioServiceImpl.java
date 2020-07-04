@@ -7,9 +7,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.desafio.ambev.domain.entity.Cliente;
+
 import com.desafio.ambev.domain.entity.Proprietario;
-import com.desafio.ambev.domain.repository.ClienteDAO;
 import com.desafio.ambev.domain.repository.ProprietarioDAO;
 
 @Service @Transactional
