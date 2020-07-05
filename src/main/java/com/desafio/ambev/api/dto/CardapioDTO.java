@@ -7,11 +7,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-<<<<<<< HEAD
+
 import org.hibernate.annotations.Cascade;
-=======
+
 import com.desafio.ambev.domain.entity.Estabelecimento;
->>>>>>> ad46817a1566c85745c4c4335991c62d6477e6f4
+
 
 public class CardapioDTO {
 

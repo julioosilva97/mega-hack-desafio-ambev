@@ -2,11 +2,13 @@ package com.desafio.ambev.domain.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
 
 import org.modelmapper.ModelMapper;
 
@@ -19,16 +21,14 @@ import com.desafio.ambev.domain.util.AbstractEntity;
 @Table(name = "CARDAPIO")
 public class Cardapio extends AbstractEntity<Long> {
 
-<<<<<<< HEAD
-	@OneToMany(mappedBy ="cardapio")
-=======
+
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_estabelecimento")
 	private Estabelecimento estabelecimento; 
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_cardapio")
->>>>>>> ad46817a1566c85745c4c4335991c62d6477e6f4
 	private List<Produto> produtos;
 
 	public List<Produto> getProdutos() {
