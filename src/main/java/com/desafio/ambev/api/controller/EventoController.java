@@ -23,7 +23,7 @@ import com.desafio.ambev.domain.entity.Evento;
 import com.desafio.ambev.domain.service.EventoService;
 
 @RestController
-@RequestMapping("evento")
+@RequestMapping("eventos")
 public class EventoController {
 
 	@Autowired

@@ -23,6 +23,8 @@ public class Evento extends AbstractEntity<Long> {
 	@ManyToOne
 	@JoinColumn(name="id_estabelecimento")
 	private Estabelecimento estabelecimento;
+	
+	private String descricao;
 	public String getNome() {
 		return nome;
 	}
@@ -47,13 +49,7 @@ public class Evento extends AbstractEntity<Long> {
 	public void setEstabelecimento(Estabelecimento estabelecimento) {
 		this.estabelecimento = estabelecimento;
 	}
-	public Evento(String nome, LocalDateTime dataHoraInicio, LocalDateTime dataHoraFim,
-			Estabelecimento estabelecimento) {
-		this.nome = nome;
-		this.dataHoraInicio = dataHoraInicio;
-		this.dataHoraFim = dataHoraFim;
-		this.estabelecimento = estabelecimento;
-	}
+	
 	public Evento() {
 	}
 	
@@ -65,6 +61,12 @@ public class Evento extends AbstractEntity<Long> {
 	public Evento toDoMain(EventoDTO eventoDTO) {
 		ModelMapper mapper = new  ModelMapper();
 		return mapper.map(eventoDTO, this.getClass());
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 }
