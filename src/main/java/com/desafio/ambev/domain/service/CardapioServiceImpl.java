@@ -24,9 +24,9 @@ public class CardapioServiceImpl implements CardapioService {
 	}
 
 	@Override
-	public void buscarPorId(Long id) {
+	public Cardapio buscarPorId(Long id) {
 		
-		cardapioDAO.findById(id);
+		return cardapioDAO.findById(id);
 		
 	}
 

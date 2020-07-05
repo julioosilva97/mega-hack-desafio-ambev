@@ -7,7 +7,6 @@ import javax.validation.constraints.NotNull;
 import com.desafio.ambev.domain.entity.Cardapio;
 import com.desafio.ambev.domain.entity.Endereco;
 import com.desafio.ambev.domain.entity.Evento;
-import com.desafio.ambev.domain.entity.Pessoa;
 import com.desafio.ambev.domain.entity.Proprietario;
 
 public class EstabelecimentoDTO {
