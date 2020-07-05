@@ -1,11 +1,8 @@
 package com.desafio.ambev.domain.entity;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.modelmapper.ModelMapper;
@@ -20,12 +17,11 @@ public class Promocoes extends AbstractEntity<Long> {
 
 	private String descricao;
 
-	@OneToMany
+	@ManyToOne
 	@JoinColumn(name="id_estabelecimento")
 	private Estabelecimento estabelecimento;
 	
-	@OneToMany(mappedBy ="promocoes",cascade = CascadeType.ALL)
-	private List <Produto> produtos;
+	
 
 	public String getDescricao() {
 		return descricao;
@@ -44,18 +40,9 @@ public class Promocoes extends AbstractEntity<Long> {
 		this.estabelecimento = estabelecimento;
 	}
 
-	public List<Produto> getProdutos() {
-		return produtos;
-	}
-
-	public void setProdutos(List<Produto> produtos) {
-		this.produtos = produtos;
-	}
-
-	public Promocoes(String descricao, Estabelecimento estabelecimento, List<Produto> produtos) {
+	public Promocoes(String descricao, Estabelecimento estabelecimento) {
 		this.descricao = descricao;
 		this.estabelecimento = estabelecimento;
-		this.produtos = produtos;
 	}
 
 	public Promocoes() {
