@@ -35,6 +35,9 @@ public class Estabelecimento extends AbstractEntity<Long> {
 	
 	@OneToMany(mappedBy ="estabelecimento",cascade = CascadeType.ALL)
 	private List <Evento> eventos;
+	
+	@OneToMany(mappedBy ="estabelecimento",cascade = CascadeType.ALL)
+	private List <Promocoes> promocoes;
 
 	public String getNome() {
 		return nome;
