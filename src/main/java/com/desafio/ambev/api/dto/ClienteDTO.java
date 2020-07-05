@@ -11,10 +11,7 @@ public class ClienteDTO {
 	@NotBlank
 	private String nome;
 	
-	@NotNull
 	private String celular;
-	
-	private EnderecoDTO endereco;
 	
 	private UsuarioDTO usuario;
 
@@ -40,14 +37,6 @@ public class ClienteDTO {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
-	}
-
-	public EnderecoDTO getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(EnderecoDTO endereco) {
-		this.endereco = endereco;
 	}
 
 	public UsuarioDTO getUsuario() {
