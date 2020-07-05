@@ -10,10 +10,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
+	private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
+	        "classpath:/META-INF/resources/", "classpath:/resources/",
+	        "classpath:/static/", "classpath:/public/" };
+	
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
-			.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
+			.allowedMethods("GET", "POST", "PATCH","PUT", "DELETE", "OPTIONS", "HEAD", "TRACE", "CONNECT");
 		
 	}
 	
@@ -27,6 +31,9 @@ public class WebConfig implements WebMvcConfigurer {
 	    registry
         .addResourceHandler("/webjars/**")
         .addResourceLocations("classpath:/META-INF/resources/webjars/");
+	    
+	    registry.addResourceHandler("/**").addResourceLocations(
+	            CLASSPATH_RESOURCE_LOCATIONS);
 	   
 	}
 }
