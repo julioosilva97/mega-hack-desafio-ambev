@@ -17,8 +17,8 @@ public class Cliente extends Pessoa {
 	public Cliente() {
 	}
 
-	public Cliente(String nome, String celular, Endereco endereco, LocalDate dataNascimento, Usuario usuario) {
-		super(nome, celular, endereco, dataNascimento, usuario);
+	public Cliente(String nome, String celular, LocalDate dataNascimento, Usuario usuario) {
+		super(nome, celular, dataNascimento, usuario);
 	}
 	
 	public Cliente toDoMain(ClienteDTO clienteDTO) {

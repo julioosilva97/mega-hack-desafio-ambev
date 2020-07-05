@@ -7,6 +7,8 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import com.desafio.ambev.domain.util.AbstractEntity;
 import com.desafio.ambev.domain.util.Perfil;
 
@@ -37,7 +39,11 @@ public class Usuario extends AbstractEntity<Long> {
 	}
 
 	public void setSenha(String senha) {
-		this.senha = senha;
+		if(senha!=null) {
+			this.senha = new BCryptPasswordEncoder().encode(senha);
+		}else {
+			this.senha = senha;
+		}
 	}
 
 	public Perfil getPerfil() {

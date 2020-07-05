@@ -18,8 +18,8 @@ public class Proprietario extends  Pessoa{
 	public Proprietario() {
 	}
 
-	public Proprietario(String nome, String celular, Endereco endereco, LocalDate dataNascimento, Usuario usuario) {
-		super(nome, celular, endereco, dataNascimento, usuario);
+	public Proprietario(String nome, String celular, LocalDate dataNascimento, Usuario usuario) {
+		super(nome, celular, dataNascimento, usuario);
 	}
 	
 	public Proprietario toDoMain(ProprietarioDTO proprietarioDTO) {

@@ -14,7 +14,7 @@ public class ProprietarioDTO {
 	@NotNull
 	private String celular;
 	
-	private EnderecoDTO endereco;
+	
 	
 	private UsuarioDTO usuario;
 
@@ -40,14 +40,6 @@ public class ProprietarioDTO {
 
 	public void setCelular(String celular) {
 		this.celular = celular;
-	}
-
-	public EnderecoDTO getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(EnderecoDTO endereco) {
-		this.endereco = endereco;
 	}
 
 	public UsuarioDTO getUsuario() {
