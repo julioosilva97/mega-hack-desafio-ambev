@@ -1,6 +1,5 @@
 package com.desafio.ambev.api.dto;
 
-import javax.validation.constraints.NotBlank;
 
 public class ProdutoDTO {
 	
