@@ -54,7 +54,7 @@ public class PromocoesController {
 		List<Promocoes> promocoes = service.listarTodos();
 		
 		return new ResponseEntity<List<PromocoesDTO>>(promocoes.stream()
-			.map(promocao -> promocao.toDTO())
+			.map(p -> p.toDTO())
 			.collect(Collectors.toList()), HttpStatus.OK);
 	}
 	
