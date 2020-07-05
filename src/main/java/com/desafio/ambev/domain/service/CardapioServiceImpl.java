@@ -33,7 +33,7 @@ public class CardapioServiceImpl implements CardapioService {
 	@Override
 	public void alterar(Cardapio cardapio) {
 		
-		cardapioDAO.update(cardapio);
+		 cardapioDAO.update(cardapio);
 		
 	}
 
