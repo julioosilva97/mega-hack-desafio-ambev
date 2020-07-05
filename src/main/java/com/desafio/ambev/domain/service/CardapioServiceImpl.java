@@ -1,5 +1,7 @@
 package com.desafio.ambev.domain.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +37,12 @@ public class CardapioServiceImpl implements CardapioService {
 		
 		 cardapioDAO.update(cardapio);
 		
+	}
+
+	@Override
+	public List<Cardapio> listarTodos() {
+		// TODO Auto-generated method stub
+		return cardapioDAO.findAll();
 	}
 
 	

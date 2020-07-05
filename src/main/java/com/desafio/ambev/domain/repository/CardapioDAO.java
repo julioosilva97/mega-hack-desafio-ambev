@@ -2,6 +2,8 @@ package com.desafio.ambev.domain.repository;
 
 
 
+import java.util.List;
+
 import com.desafio.ambev.domain.entity.Cardapio;
 
 public interface CardapioDAO {
@@ -10,6 +12,6 @@ public interface CardapioDAO {
     void update(Cardapio cardapio);
     Cardapio findById(Long id);
     //void delete(Long id);
-    //List<Cardapio> findAll();
+    List<Cardapio> findAll();
 	
 }

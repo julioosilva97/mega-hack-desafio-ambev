@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio.ambev.api.dto.EstabelecimentoDTO;
+import com.desafio.ambev.api.dto.EstabelecimentoUpdateDTO;
 import com.desafio.ambev.domain.entity.Estabelecimento;
 import com.desafio.ambev.domain.service.EstabelecimentoService;
 
@@ -58,7 +59,7 @@ public class EstabelecimentoController {
 	}
 	
 	@PutMapping("atualizar")
-	public ResponseEntity<Void> atualizar(@Valid @RequestBody EstabelecimentoDTO estabelecimentoDTO){
+	public ResponseEntity<Void> atualizar(@Valid @RequestBody EstabelecimentoUpdateDTO estabelecimentoDTO){
 		Estabelecimento estabelecimento = new Estabelecimento();
 		
 		estabelecimento = estabelecimento.toDoMain(estabelecimentoDTO);

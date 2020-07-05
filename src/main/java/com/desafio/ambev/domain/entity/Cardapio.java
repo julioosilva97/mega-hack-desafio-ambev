@@ -1,6 +1,8 @@
 package com.desafio.ambev.domain.entity;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -29,20 +31,25 @@ public class Cardapio extends AbstractEntity<Long> {
 	
 	@OneToMany(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_cardapio")
-	private List<Produto> produtos;
+	private Set<Produto> produtos = new HashSet<>();
 
-	public List<Produto> getProdutos() {
+	
+
+	public Estabelecimento getEstabelecimento() {
+		return estabelecimento;
+	}
+
+	public void setEstabelecimento(Estabelecimento estabelecimento) {
+		this.estabelecimento = estabelecimento;
+	}
+
+	public Set<Produto> getProdutos() {
 		return produtos;
 	}
 
-	public void setProdutos(List<Produto> produtos) {
+	public void setProdutos(Set<Produto> produtos) {
 		this.produtos = produtos;
 	}
-
-	public Cardapio(List<Produto> produtos) {
-		this.produtos = produtos;
-	}
-	
 
 	public Estabelecimento getEstebelecimento() {
 		return estabelecimento;
