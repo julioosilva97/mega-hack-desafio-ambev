@@ -23,7 +23,7 @@ public class Produto extends AbstractEntity<Long>  {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="id_cardapio")
+	@JoinColumn(name="cardapio_id")
 	private Cardapio cardapio;
 	
 	public String getNome() {
