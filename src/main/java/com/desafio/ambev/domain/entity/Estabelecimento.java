@@ -12,6 +12,7 @@ import javax.persistence.Table;
 import org.modelmapper.ModelMapper;
 
 import com.desafio.ambev.api.dto.EstabelecimentoDTO;
+import com.desafio.ambev.api.dto.EstabelecimentoUpdateDTO;
 import com.desafio.ambev.domain.util.AbstractEntity;
 
 @SuppressWarnings("serial")
@@ -101,6 +102,11 @@ public class Estabelecimento extends AbstractEntity<Long> {
 	}
 	
 	public Estabelecimento toDoMain(EstabelecimentoDTO estabelecimentoDTO) {
+		ModelMapper mapper = new ModelMapper();
+		return mapper.map(estabelecimentoDTO, this.getClass());
+	}
+	
+	public Estabelecimento toDoMain(EstabelecimentoUpdateDTO estabelecimentoDTO) {
 		ModelMapper mapper = new ModelMapper();
 		return mapper.map(estabelecimentoDTO, this.getClass());
 	}
