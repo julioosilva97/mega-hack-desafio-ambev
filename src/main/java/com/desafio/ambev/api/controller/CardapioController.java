@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.desafio.ambev.api.dto.CardapioDTO;
-import com.desafio.ambev.api.dto.ClienteDTO;
-import com.desafio.ambev.api.dto.EstabelecimentoDTO;
 import com.desafio.ambev.domain.entity.Cardapio;
 import com.desafio.ambev.domain.service.CardapioService;
 

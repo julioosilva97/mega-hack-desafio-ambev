@@ -1,7 +1,6 @@
 package com.desafio.ambev.api.dto;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 
 public class ClienteDTO {

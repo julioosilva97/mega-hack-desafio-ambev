@@ -2,11 +2,10 @@ package com.desafio.ambev.domain.entity;
 
 import java.math.BigDecimal;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import com.desafio.ambev.domain.util.AbstractEntity;

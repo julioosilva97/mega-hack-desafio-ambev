@@ -2,15 +2,10 @@ package com.desafio.ambev.api.dto;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+
 import javax.validation.constraints.NotNull;
 
 
-import org.hibernate.annotations.Cascade;
-
-import com.desafio.ambev.domain.entity.Estabelecimento;
 
 
 public class CardapioDTO {

@@ -1,7 +1,6 @@
 package com.desafio.ambev.domain.entity;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -15,7 +14,6 @@ import javax.persistence.Table;
 import org.modelmapper.ModelMapper;
 
 import com.desafio.ambev.api.dto.CardapioDTO;
-import com.desafio.ambev.api.dto.ClienteDTO;
 import com.desafio.ambev.domain.util.AbstractEntity;
 
 @SuppressWarnings("serial")
